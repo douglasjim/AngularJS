@@ -1,0 +1,45 @@
+ng-controler onde fazmos a juncao do html com os arquivos js , funcoes acones etc...
+ng-bind = nao entendi - seria pegar algum valor ou funcao expecifica dentro de um controler? seria explicitar oque queremos usar dentro de um controller?
+podemos concatenar os codgios que estao entre chaves com valores do tipo string ou int
+13 07h - pinheiros / 08h - dr Rodrigo 
+ng-model serve para pegar o valor que esta sendo inserido no html e expor ele para alguem ou para alguem ou para algum lugar, fazendo assim outros codigos usarem ele para alguma coisa.
+a funcao no angualrjs ele faz o seguinte, quando estamos pegando uma variavel e incremetando ela iremos pegar uma variavel do proprio code ( ou melhor do proprio arquivo js) nessa essa funcao irá olhar o arquivo inteiro ira olhar linha por linha procurando essa variavel que estaos usando na funcao
+ng-disabled = serve para quando nao houver valor em algum lugar o botao ficará desativado
+por exemplo neste caso - ng-disabled="!contatos.nome || !contatos.telefone" / caso o contatos.nome e telefone nao tiver valor la no input o botao ficará desligado
+VER OQUE É DIRETIVA !!!!
+ng-options = serve para quando houver uma tag para selecioanr opcoes iremos inserir esse tipo de ng para mostrar na tela as opcoes que temos , e os valores que iremos pegar dentro de um array para mostrar la no html temos que usar o este ng para pegar esses valores
+alem disso podemos inserir um valor default para nao ficar em branco a primeira opcao das opcoes
+caso dentro da tag select tenha categorias de opcoes dentro de uma varaivel lista devemos mostrar tambem essa categoria para que seja mais facil para o usuario escolher a opcao, portanto, usamos o codigo (group by) para mostrar esse valor a mais que temos para mostrar que no caso seria categoria
+ng-class="[classe1,classe2]" = isso so se usa quando queremos inserir mais de uma classe dentro de uma tag usando ng-class
+ng-class="{ selecionado: item.selecionado}" = aqui estams dizendo que caso seja true o checkbox a classe chamada selecionado sera inserida
+ng-class="{ selecionado: item.selecionado, negrito: item.selecionado}" = aqui faz basicamente a mesma coisa da linha de cima porem caso aja mais de uma classe temos que inserir o nome da classe dois pontos e colocar o contador e ponto a primeira classe que esta sendo referetencia neste caso é o selecionado, porque ele foi a primeira classe a ser inserida para caso o checkbox for selecionado
+ng-class="{ selecionado negrito: item.selecionado}" = aqui faz a mesma coisa da linha de cima com a diferenca que estar com uma quantidade de letras a menos
+contatos.filter = o filter permite receber uma funcao
+!pcontato.selecionado = revisando o acento ! estamos negando o valor caso ele seja true
+ng-style="{ 'background-color':item.cor }" = com o ng-style podemos escolher uma cor para cada item de uma lista, basta adicionar um valor pra cada item e inserindo em aspas a cor dele
+ng-show="contatos.length > 0" = esse é show ! aqui ele quer dizer o seguinte, se contatos.length for maior que 0 mostre a tag table e o que estiver dentro dele se nao nao mostre
+ng-hide faz a mesma coisa com o ng-show de cima porem esconde
+ng-if faz as condicoes if
+ngif="coloque sua condicao"
+
+
+   <div style="margin-top: 24px; margin-bottom: 10px;">
+        <a class="me-email-headline" style="font-size: 18px;font-family:'Segoe UI Semibold','Segoe UI','Helvetica Neue',Helvetica,Arial,sans-serif;text-decoration: underline;color: #6264a7;" href="https://teams.microsoft.com/l/meetup-join/19%3ameeting_Y2YzNWQzMDUtNmI0ZC00Yzk4LWFjYzItODZmODExMTVlNjRj%40thread.v2/0?context=%7b%22Tid%22%3a%22ce047754-5e4b-4c19-847a-3c612155b684%22%2c%22Oid%22%3a%22cc15958b-0830-4405-b6c8-699cbbf3f6eb%22%7d" target="_blank" rel="noreferrer noopener">Join Microsoft Teams Meeting</a>
+      </div>
+	 
+	 
+	  <a class="me-email-link" style="font-size: 12px;text-decoration: none;color: #6264a7;" target="_blank" href="https://aka.ms/JoinTeamsMeeting" rel="noreferrer noopener">Learn more about Teams</a>
+    
+     
+     
+      <div style="font-size: 14px; margin-bottom: 4px;">
+        
+      </div>
+      <div style="font-size: 12px;">
+      
+      </div>
+
+
+
+https://web.microsoftstream.com/video/f2417e30-b026-410f-9438-2541b326901f - video chamada gravada
+     

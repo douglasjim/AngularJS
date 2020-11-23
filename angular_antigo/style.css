@@ -1,0 +1,50 @@
+.separado{
+	color: red;
+	width: 400px;
+	height: 100px;
+	text-align: center;
+	margin-top: 20px;
+	margin-left: auto;
+	margin-right: auto;
+	margin-bottom: 40px !important;
+	background-color: orange;
+}
+
+.jumbo{
+	color: red;
+	width: 500px; /*tamanho da div horizontal*/
+	height: auto; /*tamanho vertical*/
+	text-align: center;
+	margin-top: 20px;
+	margin-left: auto;
+	margin-right: auto;
+	margin-bottom: 40px !important;
+}
+.tabela{
+	color: red !important;
+}
+.form-control{
+	margin-bottom: 5px;
+}
+.form-control + input{
+	margin-bottom: 30px;
+}
+.olha{
+	color: red;
+}
+
+.btn-primary{
+	margin-bottom: 10px;
+}
+.jumbo2{
+	color: blue;
+}
+.selecionado{
+	background-color: yellow !important; 
+}
+.negrito{
+	font-weight: bold;
+}
+.up{
+	margin-top: 90px;
+}

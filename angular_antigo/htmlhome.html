@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html ng-app="helloWorld">
+<head>
+	<title>Hello world</title>
+	<script src="angular.min.js" type="text/javascript"></script>
+	<script src="codigos.js" type="text/javascript"></script>
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+	<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+
+
+	<style type="text/css">
+		body{
+			background-color: black;
+			color: white;
+		}
+	</style>
+</head>
+<body>
+	<!-- podemos colocar o ng-controller dentro de qualquer tag que prefirirmos -->
+	<h1>Hello world!!</h1>
+	<p>Teste!</p>
+	<div ng-controller="helloWorldkk" class="jumbo">
+		<div class="separado">
+			{{ message + 'concatenar'}}
+			<!-- porque o concatenar de baixo nao funfou? -->
+			<h4 ng-bind="message"> {{ message + 'concatenar'}}</h4>
+			<h5>{{ hello + ' concatenar'}}</h5>
+		</div>
+
+		<p>{{ algo + 20 }}</p>
+		<p> {{ vdd && false }} </p>
+		<p> {{ lista[1] }} </p>
+		<p> {{ contatos[0].nome }} </p>
+		<p> {{  }} </p>
+		<table ng-show="contatos.length > 0" class="table table-striped tabela">
+			<tr>
+				<th></th>
+				<th> Nome</th>
+				<th> Telefone</th>
+				<th> Codigo</th>
+				<th> Operadora</th>
+				<th></th>
+				{{contatos}}
+			</tr>
+
+			<!-- iemo resolver esa queeto do codigo que esta atualzando de forma naoa utorizada mas ate enta vamos manter esaquestao que vai sr de verifiacao ams ate e t ao vamos apenas resolver aesa questao v essa questoa masi rtarde ate porque iremso resolver at qu eja masi tarde resolvido mas ate entoa vmaos manter nessa situacao mas ate porque iremos r esolver essa questao  mais tarde ate que seja resolvido mas ate entoa vmaos manter a questao do full e manter full mesmo e assim o mestre de progrmaco nascera capitcha -->
+			<tr ng-class="{ selecionado: item.selecionado, negrito: item.selecionado}"resourc ng-repeat="item in contatos">
+				<td><input type="checkbox" ng-model="item.selecionado">
+					<!-- me parece que dentro dessa tag quando inserimos o codigo item.selecionado, me parece que ele insere a classe selecionado com valor boleano para cada valor dentro de cada item dentro do array contatos, quando colocamos {{contatos}} conseguimos ver melhor isso -->
+				</td>
+				<td>{{ item.nome }}</td>
+				<td>{{ item.telefone }}</td>
+				<td>{{ item.codigo }}</td>
+				<td>{{ item.operadora }}</td>
+				<td><div style=" width: 20px; height: 20px;" ng-style="{ 'background-color':item.cor }"></div></td>
+			</tr>
+		</table>
+
+		<input class="form-control" type="text" name="" ng-model="contatos.nome" placeholder="nome" />
+		<input class="form-control" type="text" name="" ng-model="contatos.telefone" placeholder="telefone"/>
+		<select class="form-control" ng-model="contamathiastos.operadora" ng-options="operado.nome group by operado.categoria for operado in operadoras">
+			<!-- o valor que ficaria em branco agora sera preenchido com o valor da linha de baixo -->
+			<option value="">Selecione uma operadora</option>
+		</select>
+
+
+		<p class="olha">{{ contatos.nome }}</p>
+		<p class="olha">{{ contatos.telefone }}</p>
+		<p class="olha">{{ "Operadora " + contatos.operadora.nome +"/ Codigo"+ contatos.operadora.codigo}}</p>
+
+		<!-- essa linha de baixo so funciona para a linha 23 comentada la no js -->
+		<!-- ng-click="adicionarContato(nome,telefone) -->
+
+		<button class="btn btn-primary btn-block" ng-click="adicionarContato(contatos,operadoras)" ng-disabled="!contatos.nome || !contatos.telefone">Adicionar Contato</button>
+
+		<!-- para que fica masi facil dizemos invocar a funcao quando colocar o ng-click e atribuimos um nome e entre parente o valor que essa funcao ira receber ( invocar a funcao / kkk conjurar funcao) -->
+		<button class="btn btn-danger btn-block" ng-click="ApagarContatos(contatos)" ng-disabled="!isContatoSelecionado(contatos)">Excluir usuario</button>
+
+
+
+
+
+
+
+
+
+		<!-- ver com os manos sobre, caso eu queira ter um angular.module a mais no mesmo arquivo -->
+		<!-- <div ng-app="olhaele" class="jumbo2">
+			<div Module.controller="olhaelee">
+				<p>HELOOO + {{ olhala }}</p>
+			</div>
+			
+		</div> -->
+
+	</div>
+	<!-- deu erro ver os manos -->
+	<div ng-include="'footer.html'"></div>
+
+	<span ng-show="here2 > 10">{{here2}}</span>
+	<div class="up">
+		endd
+	</div>
+	
+
+</body>
+</html>
