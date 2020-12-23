@@ -12,7 +12,7 @@
 
 .jumbo{
 	color: red;
-	width: 500px; /*tamanho da div horizontal*/
+	width: 600px; /*tamanho da div horizontal*/
 	height: auto; /*tamanho vertical*/
 	text-align: center;
 	margin-top: 20px;
@@ -47,4 +47,7 @@
 }
 .up{
 	margin-top: 90px;
+}
+.footer{
+	color: red;
 }
