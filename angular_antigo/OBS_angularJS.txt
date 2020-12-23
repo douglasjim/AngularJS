@@ -1,7 +1,7 @@
 ng-controler onde fazmos a juncao do html com os arquivos js , funcoes acones etc...
 ng-bind = nao entendi - seria pegar algum valor ou funcao expecifica dentro de um controler? seria explicitar oque queremos usar dentro de um controller?
 podemos concatenar os codgios que estao entre chaves com valores do tipo string ou int
-13 07h - pinheiros / 08h - dr Rodrigo 
+
 ng-model serve para pegar o valor que esta sendo inserido no html e expor ele para alguem ou para alguem ou para algum lugar, fazendo assim outros codigos usarem ele para alguma coisa.
 a funcao no angualrjs ele faz o seguinte, quando estamos pegando uma variavel e incremetando ela iremos pegar uma variavel do proprio code ( ou melhor do proprio arquivo js) nessa essa funcao irá olhar o arquivo inteiro ira olhar linha por linha procurando essa variavel que estaos usando na funcao
 ng-disabled = serve para quando nao houver valor em algum lugar o botao ficará desativado
