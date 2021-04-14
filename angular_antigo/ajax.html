@@ -1,26 +1,45 @@
 <!DOCTYPE html>
 <html>
-<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+<!-- <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script> -->
 <body>
 
-<div ng-app="myApp" ng-controller="myCtrl"> 
+	<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+
+<div> 
 
 <p>Today's welcome message is:</p>
 
-<h1>{{myWelcome}}</h1>
+<h1></h1>
 
 </div>
 
 <p>The $http service requests a page on the server, and the response is set as the value of the "myWelcome" variable.</p>
 
+
+<!-- requisicoes ajax = get,post etc.. -->
+
 <script>
-var app = angular.module('myApp', []);
-app.controller('myCtrl', function($scope, $http) {
-  $http.get("http://localhost:3412/contatos")
-  .then(function(response) {
-      $scope.myWelcome = response.data;
-  });
-});
+
+	// function teste() {
+
+ //        let url = 'https://localhost:3412/contatos';
+ //        let xhr = new XMLHttpRequest();
+ //        let ok = xhr.open('GET', url, true);
+ //        console.log(ok)
+ //    }
+ //    teste()
+
+
+$http.get("http://localhost:3412/contatos")
+	  .then(function(response) {
+	      $scope.myWelcome = response.data;
+	      console.log(myWelcome)
+	      console.log(response)
+	      console.log(data)
+	  });
+
+
+
 </script>
 
 </body>

@@ -42,4 +42,17 @@ ngif="coloque sua condicao"
 
 
 https://web.microsoftstream.com/video/f2417e30-b026-410f-9438-2541b326901f - video chamada gravada
+
+DOCS angularJS
+angular.copy = copia os valores de uma varaivel para outra, e quando for mudar os valores da segunda variavel a primeira nao sera alterada os valores, assim alterando apenas a segunda
+ocupacaoMatricula -  isso seria o numero de registro?
+valorRenda ou  rendaPessoal ? no campo rendaLiquida
+Endereco , Bairro e UF =  vem automático quando inserir o CEP logo os campos tem que esta desabilitados
+cara do cadastro ou do koban qual deles sera preenchido a telinha
+qual campo tem que editar qual nao
+
+cada botao do teclado existe u codigo referenciado e por meio da linha de baixo conseguimos ter acesso ao codigo
+ng-keydown="($event.keyCode === 13 || $event.keyCode === 32 || $event.keyCode ===9) && address.getAddressFromZip();
+
+
      

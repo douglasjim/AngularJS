@@ -51,3 +51,29 @@
 .footer{
 	color: red;
 }
+.finalizado{
+	color: brown;
+}
+.pendente{
+	color: purple;
+}
+.aprovado{
+	color: blue;
+}
+.reprovado{
+	color: yellow;
+}
+
+.nome.ng-valid{
+	color: green
+}
+
+/*quando colocamos qualquer valor no campo e apagamos ele, ele deixa de ser virgem e o ng-dirty é acionado*/
+.nome.ng-dirty.ng-invalid-required{
+	background-color: red
+}
+
+.curso.ng-valid{
+	color: red
+}
+

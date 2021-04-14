@@ -5,6 +5,8 @@
 	<script src="angular.min.js" type="text/javascript"></script>
 	<script src="codigos.js" type="text/javascript"></script>
 	<script src="codigo2.js" type="text/javascript"></script>
+	<script src="operadorasAPI.js" type="text/javascript"></script>
+	<script src="factory.js" type="text/javascript"></script>
 	<link rel="stylesheet" type="text/css" href="style.css">
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
 	<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
@@ -19,20 +21,25 @@
 		}
 	</style>
 </head>
+
+<!-- todos os tipos de dados tem sua propriedade apos o ponto, dezenas propriedades para cada hora iremos usar algum tipo dela, é o famoso __proto__ explicacao melhor la nas video aula da rocket do maike -->
 <body>
 	<h1>Hello world!!</h1>
 	<p>Teste!</p>
 
-	<!-- <div ng-app="helloWorld2">
+	<div ng-app="helloWorld2">
 		<div >
 			{{message}}
 		</div>
 		
-	</div> -->
+	</div>
 
-	<div ng-controller="helloWorldkk" class="jumbo">
+
+	<!-- a duas letrunhas chaves chamadas "as" dentro da controller neste caso estamos usando "as POP" estamos dizendo que variaveis criada no controller com this.nomedavariavel, so pode ser acessado usando o as criado logo a baixo -->
+	<div ng-controller="helloWorldkk as POP"  class="jumbo">
 		<div class="separado">
 			{{ message + 'concatenar'}}
+			{{'LOL' + LOL}}
 			<!-- porque o concatenar de baixo nao funfou? -->
 			<!-- <h4 ng-bind="message"> {{ message + 'concatenar'}}</h4> -->
 			<h5>{{ hello + ' concatenar'}}</h5>
@@ -44,6 +51,91 @@
 		<p>{{ vdd && false }} </p>
 		<p>{{ lista[1] }} </p>
 		<p>{{ contatos[0].nome }} </p>
+		<p>{{ mensagem }}BAIXO </p>
+		<span>{{ POP.kac }}</span>
+		<p>{{ mim }}</p>
+
+		<span> AULA DE ANGULARJS FACUL !!</span><br><br><br><br><br>
+		<span>{{ POP.douglassantos }}</span>
+		<button ng-click="POP.olhaoclick('90')">CLICK{{POP.douglassantos2}}</button>
+
+
+		<input ng-change="POP.teste()" ng-blur='teste2()'  placeholder="pesquise" type="text" name="textoo"  ng-model="busca.nome" id="lara">
+
+		<!-- para pesquisa uma coluna especifica temos  que colocar no ng-bind qual coluna queremos de fato usar como referencia para filtrar -->
+		<!-- paipe o nome desse traço que esta separando as coisas no ng-repeat a baixo -->
+		<!-- com o filter dois pontos nome da varaivel que colocamos no ino=out que ira receber o valor que sera usado para filtrar  -->
+		<div ng-repeat="teste in POP.listao | filter:busca" ng-class="POP.verificarStatus(teste.status)">
+			<span>{{teste.nome}}</span>
+			<span>{{teste.tel}}</span>
+			<span>{{teste.status}}</span>
+		</div>
+
+
+		<h2>FORMULARIO NEW</h2>
+
+		<form ng-submit="POP.submit2()" name="alvos">
+
+			<input type="text" name="nome" class="nome" ng-model="POP.aluno9.nome" placeholder="nome" required ng-minlength="4"/>
+
+			<input type="text" name="curso" ng-model="POP.aluno9.curso" placeholder="curso" required ng-maxlength="4" class="curso">
+
+			<input type="submit" name="submit" value="submit1">
+
+			<select ng-model="POP.listaa" ng-options="c.nome for c in POP.listao">
+				
+			</select> <br><br>
+
+			<label>
+				<input type="radio" name="krl" ng-model="POP.listaaa" value="krl">
+				krl
+			</label>
+
+
+			<label>
+				<input type="radio" name="krl" ng-model="POP.listaaa" value="krl2">
+				krl2
+			</label>
+
+			{{POP.listaa}}
+
+
+			<div ng-repeat="teste in POP.listao">
+				<label>
+					
+					<input type="checkbox" name="checkbox" ng-model="teste.status" ng-true-value="'aprovadooo'" ng-false-value="'reprovado'">
+				</label>
+				{{teste.status}}
+				<!-- agora com esse script dentro do html podemos mudar a cor das duas chaves que eestao usando os valores que estao dentro desse listao so olhar o a pagina -->
+				
+			</div>
+
+			<div ng-controller='segundo'>
+				{{mensagem99}}
+				
+			</div>
+				
+			
+			
+		</form>
+
+		<div ng-show="alvos.nome.$error.required" class="alert alert-danger">
+				Por favor preencha o nome
+		</div>
+
+
+		<div  ng-show="alvos.curso.$error.required" class="alert alert-danger">
+				Por favor preencha o curso
+		</div>
+
+		
+
+		<br><br><br><br><br>
+		<span> FIM AULA DE ANGULARJS FACUL!!</span>
+
+
+		
+		
 
 
 			
@@ -113,6 +205,7 @@
 
 
 		<!-- !!!!! DEPOIS REVER SOBRE ESSAS MENSAGENS QUE SAO ALERTADAS LA NA HORA NAS LINHAS DE BAIXO ng-message !!!!!!! -->
+		<!-- esta dando erro no ng-message -->
 
 		<!-- ng-show="contatoForm.nome.$invalid && contatoForm.nome.$dirty" -->
 		<div ng-messages="contatoForm.nome.$error" class="alert alert-danger">
@@ -120,6 +213,7 @@
 				Por favor preencha o nome
 			</div>
 		</div>
+
 
 		<!-- mensagem de erro para telefone -->
 		<div class="alert alert-danger" ng-show="contatoForm.telefone.$error.pattern ">Por favor preencha o telefone com 8 digitos no formato 99999-6666</div>
@@ -166,6 +260,41 @@
 		endd
 
 	</div>
+
+	<h1>DOCUMENTACAO !</h1>
+
+
+	<div>
+		<dumbPassword> </dumbPassword>
+	</div>
+
+	<br><br><br>
+
+
+	<div>
+  		<input type="text" ng-model="model.input">
+	</div>
+
+	<!-- nao sei pq nao esta fufando mas seria para comparar um objeto com outro -->
+<!-- 	<div >
+	  <form novalidate>
+	    <h3>User 1</h3>
+	    Name: <input type="text" ng-model="user1.name">
+	    Age: <input type="number" ng-model="user1.age">
+
+	    <h3>User 2</h3>
+	    Name: <input type="text" ng-model="user2.name">
+	    Age: <input type="number" ng-model="user2.age">
+
+	    <div>
+	      <br/>
+	      <input type="button" value="Compare" ng-click="compare()">
+	    </div>
+	    User 1: <pre class="footer">{{user1 | json}}</pre>
+	    User 2: <pre class="footer">{{user2 | json}}</pre>
+	    Equal: <pre class="footer">{{result}}</pre>
+	  </form>
+	</div> -->
 	
 
 </body>
