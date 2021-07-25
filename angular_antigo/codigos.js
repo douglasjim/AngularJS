@@ -102,10 +102,23 @@ angular.module("helloWorld").controller("helloWorldkk", function ($location,$win
 	};
 
 
+
+
+	var carregarPokemon = function (){
+		$http.get("https://pokeapi.co/api/v2/pokemon/ditto").then(function (data,status) {
+  			var lok = data.data;
+  			console.log(lok)
+  			console.log("POKEMONNNNNNNNNNN")
+
+		});
+	};
+
+
 	//NAO ESQUECE QUE PODEMOS COLOCAR O CODIGO PARA FECHAR OU ABRIR MODAL OU QUALQUER COISA DENTRO DA FUNCAO !!!!!
 	//USAR parseInt para colocar em int(pesquisar como se usa)
 	carregarContatos()
 	carregarOperados()
+	carregarPokemon()
 
 	//estranhamente essa funcao aqui de baixo ele consegue pegar os valores que estao la no input do html e inserir esses valores na aray de chaves
 	$scope.adicionarContato = function (contatos){
@@ -229,14 +242,12 @@ angular.module("helloWorld").controller("helloWorldkk", function ($location,$win
 		console.log("comeca agora")
 		var url = $location.url();
 		var absurl = $location.absUrl();
-		var protocol = $location.protocol();
 		console.log(url)
 		console.log(absurl)
-		console.log(protocol)
 		
 	}
-	console.log(vm.teste111())
 
+	console.log(vm.teste111())
 
 
 	var ok = new Pessoa(20,30)
@@ -267,7 +278,7 @@ angular.module("helloWorld").controller("helloWorldkk", function ($location,$win
 				});
 			}
 		})
-	}
+	}	
 
 	function teste10(response){
 		return new Promise((resolve,reject) => {
@@ -278,6 +289,8 @@ angular.module("helloWorld").controller("helloWorldkk", function ($location,$win
 			}
 		})
 	}
+
+
 
 	//com uma fucao assicrono temos a certeza que receber todos os valore que aguardamos ou da o erro 
 	//isso por causa do await
@@ -382,12 +395,7 @@ angular.module("helloWorld").controller("helloWorldkk", function ($location,$win
 
 	console.log("PPPPP" + log)
 
-	// esse nome que colocamos entre parentese apos o novo controller que criamos é chamada de depedencia, geralmente é um servico
-	// um outro arquivo que iremos usar nessa funcao
-
-}).controller('segundo', function($scope,ItemService){
 	$scope.mensagem99 = 'segundo controller'
-	console.log("NOVO CONTROLLER !!!!!!!!!!!!!!!!")
 	var values = {name: 'misko', gender: 'male'};
 	var log = [];
 	angular.forEach(values, function(value, key) {
@@ -396,6 +404,7 @@ angular.module("helloWorld").controller("helloWorldkk", function ($location,$win
 
 	console.log("PPPPP" + log)
 
+/*
 	function(ItemService){
 		this.lista = function(){
 			return ItemService.lista();
@@ -410,22 +419,13 @@ angular.module("helloWorld").controller("helloWorldkk", function ($location,$win
 	}
 	};
 
-}).factory('ItemService'), [function(){
-	var item = [
-	{id: 1, descricao:'Item 0'},
-	{id: 2, descricao:'Item 2'}
-	]
+	*/
 
-	return{
-		lista: function(){
-			return item
-		}
 
-		adicionar: function(item){
-			item.push(item)
-		}
-	}
-}]
+	// esse nome que colocamos entre parentese apos o novo controller que criamos é chamada de depedencia, geralmente é um servico
+	// um outro arquivo que iremos usar nessa funcao
+
+})
 
 
 // maik
