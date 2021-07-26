@@ -111,8 +111,6 @@ angular.module("helloWorld").controller("helloWorldkk", function ($scope,$http){
 
 	//é referente ao ng-class
 	//o ng-class esta buscando essas duas classes de baixo e essas duas classes de baixo esta procurando class com nome delas e é ai que entra a magica , se o css esta sendo importando na codigo html o class que esta buscando o css especifico dele sera usado la no ng-class
-	$scope.classe1="selecionado";
-	$scope.classe2= "negrito";
 
 	//agora nessa funcao estamos excluindo o valor que esta no array de contatos!!!
 	$scope.ApagarContatos = function (contatos){

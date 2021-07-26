@@ -115,8 +115,19 @@
 		<!-- !!!!! DEPOIS REVER SOBRE ESSAS MENSAGENS QUE SAO ALERTADAS LA NA HORA NAS LINHAS DE BAIXO ng-message !!!!!!! -->
 
 		<!-- ng-show="contatoForm.nome.$invalid && contatoForm.nome.$dirty" -->
-		<div ng-messages="contatoForm.nome.$error" class="alert alert-danger">
-			<div ng-message="required">
+		<!-- contatoForm.nome - podemos usar isso para identificar as propriedades de cada label de um formulario para entender a logica dele e fazer funcionar  -->
+		<!-- {{ "contatoForm.nome.$touched? " + contatoForm.nome.$touched }}<br>
+		{{ "contatoForm.nome.$pristine? " + contatoForm.nome.$pristine }}<br>
+		{{ "contatoForm.nome.$dirty? " + contatoForm.nome.$dirty }}<br>
+		{{ "contatoForm.nome.$valid? " + contatoForm.nome.$valid }}<br>
+		{{ "contatoForm.nome.$invalid? " + contatoForm.nome.$invalid }}<br>
+		{{ "contatoForm.nome.$name? " + contatoForm.nome.$name }}<br>
+		{{ "contatoForm.nome.$error? " + angular.toJson(contatoForm.nome.$error) }}<br>
+		{{ "contatoForm.telefone?" + contatoForm.telefone.$name }}<br><br> -->
+		
+		
+		<div ng-show="contatoForm.nome.$pristine" class="alert alert-danger">
+			<div >
 				Por favor preencha o nome
 			</div>
 		</div>
